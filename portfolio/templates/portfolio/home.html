@@ -1,0 +1,26 @@
+<H1>Síðan hans Gumma</H1>
+
+<a href ="{% url 'blog:all_blogs' %}"> Blog </a>
+
+{% load static %}
+
+
+
+
+<br>
+
+<img src="{% static 'portfolio/Lotta.jpg' %}">
+<br>
+{% for project in projects %}
+<h1>{{ project.title}} </h1>
+<br>
+{{ project.description }}
+<br>
+<img src="{{ project.image.url }}", height=100, width=140>
+<br>
+{% if project.url %}
+<a href="{{project.url}}"> Linkur </a>
+{% endif %}
+<br>
+
+{% endfor %}

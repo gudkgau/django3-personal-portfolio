@@ -1,0 +1,13 @@
+
+
+<H1>Hello Blog</H1>
+<H2> Nick has written {{ blogs.count }} blog{{ blogs.count|pluralize}} <H2>
+
+{% for blog in blogs %}
+
+<h2>{{ blog.title}} </h2><a/>
+<br>
+{{ blog.date|date:'M d Y' }}
+<br>
+{{ blog.description|truncatechars:200 }}
+{% endfor %}
